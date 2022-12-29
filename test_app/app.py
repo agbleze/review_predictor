@@ -1,5 +1,5 @@
 from shiny import *
-from test_app.api_utils import request_prediction
+from api_utils import request_prediction
 from constant import URL
 
 
