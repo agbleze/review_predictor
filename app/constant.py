@@ -4,5 +4,4 @@ HOST = config('HOST')
 PORT = config('PORT')
 ENDPOINT = config('ENDPOINT')
 
-
-URL = f'{HOST}:{PORT}{ENDPOINT}'
+URL = f'{HOST}:{PORT}/{ENDPOINT}'

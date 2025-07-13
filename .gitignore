@@ -127,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+reviewui_venv
+.env
