@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  api:
+    image: agbleze/reviewoler:latest
+    ports:
+      - "8080:8080"
+  
+  ui:
+    image: agbleze/review_recommender_ui:latest
+    ports:
+      - "8000:8000"
+    environment:
+      HOST: ${HOST}
+      PORT: ${PORT}
+      ENDPOINT: ${ENDPOINT}
+    depends_on:
+      - api
