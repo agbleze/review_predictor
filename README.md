@@ -1,6 +1,6 @@
 # Review predictor: User app for predicting recommendation status from review text
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/agbleze/review_predictor/ci.yml)
-![GitHub License](https://img.shields.io/github/license/agbleze/review_predictor)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 
 ## 📌 Table of Contents
