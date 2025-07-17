@@ -23,7 +23,8 @@ jobs:
     - name: Run Docker container
       run: |
         docker run -d --name shiny-container -p 8000:8000 python-shiny-app
-        sleep 15
+        sleep 30
+        docker logs shiny-container
 
     - name: Test health of Shiny app
       run: |
