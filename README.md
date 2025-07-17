@@ -21,7 +21,7 @@
 
 This project is a shiny application that provides User Interface to use for predicting whether a customer will recommend your product based on product and service review text. The app depends on model developed using ![review classifier](https://github.com/agbleze/review_classifier.git) and ![packaged into prediction api service](https://github.com/agbleze/recommendation_predictor_API.git)
 
-Description of those project which forms cornerstone of the app can be viewed by clicking description from the dropdown menu while clciking on prediction shows the prediction UI
+Description of those project which forms cornerstone of the app can be viewed by clicking "Project Description" from the dropdown menu while clciking on "Prediction" shows the prediction UI
 
 
 ## Running App UI standalone
@@ -37,7 +37,12 @@ Given that the app requires prediction api url to provide full functionality, ap
 
 To ensure that, the secrets HOST,PORT and ENDPOINT are to be provided in .env file or read directly from your secret vaults in production scenarios.
 
-With the appropriate secret in .env file, use the docker-compose.yml file to run the containers for both prediction api and user app.
+With the appropriate secret in .env file, use the docker-compose.yml file to run the containers for both prediction api and user app as follows: 
+
+```docker compose up```
+
+Access the app url which defaults to localhost:8000
+
 
 ## Usage
 
