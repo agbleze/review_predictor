@@ -5,14 +5,13 @@
 
 ## 📌 Table of Contents
 
-- [Review predictor: User app for predicting recommendation status from review text](#review-predictor-user-app-for-predicting-recommendation-status-from-review-text)
-  - [📌 Table of Contents](#-table-of-contents)
 - [Project Description](#project-description)
-  - [Running App UI standalone](#running-app-ui-standalone)
-  - [Running complete prediction service: App and prediction api](#running-complete-prediction-service-app-and-prediction-api)
-  - [Usage](#usage)
-  - [Contributing](#contributing)
-  - [License](#license)
+- [Build and Run User App as Docker container (Only App UI)](#build-and-run-user-app-as-docker-container-only-app-ui)
+    - [Clone repo](#clone-repo)
+    - [Build Docker image for App](#build-docker-image-for-app)
+- [Run complete prediction service: User App and Prediction API](#run-complete-prediction-service-user-app-and-prediction-api)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
@@ -20,32 +19,39 @@
 
 This project is a shiny application that provides User Interface to use for predicting whether a customer will recommend your product based on product and service review text. The app depends on model developed using ![review classifier](https://github.com/agbleze/review_classifier.git) and ![packaged into prediction api service](https://github.com/agbleze/recommendation_predictor_API.git)
 
-Description of those project which forms cornerstone of the app can be viewed by clicking "Project Description" from the dropdown menu while clciking on "Prediction" shows the prediction UI
+Description of the model development project can be viewed by clicking "Project Description" from the dropdown menu while clicking on "Prediction" shows the prediction UI on the app.
 
 
-## Running App UI standalone
-Given the dependence of this app on a prediction api and the modular approach separating individual services, it is best to run it as a docker container.
+## Build and Run User App as Docker container (Only App UI)
 
-The docker image for this app has already been built and is available as agbleze/review_recommender_ui:latest
+The docker image for this app has already been built and is available as agbleze/review_recommender_ui:latest.
 
-In case, you want to rebuild one yourself, use the Dockerfile in the repo for that.
+In case, you want to rebuild one yourself, use the Dockerfile in the repo for after cloning the repo. Use the commands below:
 
-## Running complete prediction service: App and prediction api
+### Clone repo
 
-Given that the app requires prediction api url to provide full functionality, appropriate secret management that caters for both production deplyoment and ease of local deployment test is important.
+```git clone https://github.com/agbleze/review_predictor.git```
 
-To ensure that, the secrets HOST,PORT and ENDPOINT are to be provided in .env file or read directly from your secret vaults in production scenarios.
+### Build Docker image for App
+
+While in the root of the cloned repo, build the image with command below:
+
+```docker build -t YOUR_IMAGE_NAME:YOUR_IMAGE_TAG .```
+
+
+## Run complete prediction service: User App and Prediction API
+
+Given the dependence of this app on a prediction api and the modular approach separating the individual services, it is best to run it as a docker compose.
+
+Given that the app requires prediction api url to provide full functionality, appropriate secret management that caters for both production deplyoment and ease of local test is important.
+
+To ensure that, the secrets HOST,PORT and ENDPOINT (of the prediction api) are to be provided in .env file or read directly from your secret vaults in production scenarios. When not provided, the user app uses the defaults HOST='0.0.0.0', PORT=8000, ENDPOINT="predict".
 
 With the appropriate secret in .env file, use the docker-compose.yml file to run the containers for both prediction api and user app as follows: 
 
 ```docker compose up```
 
 Access the app url which defaults to localhost:8000
-
-
-## Usage
-
-The package provides a high level entrypoint to train model from the terminal. Detailed demonstration of this including dataset format expected is provided in docs/example.ipynb
 
 
 ## Contributing
