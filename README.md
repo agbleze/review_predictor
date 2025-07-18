@@ -1,4 +1,4 @@
-# Review predictor: User app for predicting recommendation status from review text
+# Review Predictor App: Predicting Recommendation Status from Review
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/agbleze/review_predictor/ci.yml)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
@@ -15,7 +15,7 @@
 
 ---
 
-# Project Description
+## Project Description
 
 This project is a shiny application that provides User Interface to use for predicting whether a customer will recommend your product based on product and service review text. The app depends on model developed using ![review classifier](https://github.com/agbleze/review_classifier.git) and ![packaged into prediction api service](https://github.com/agbleze/recommendation_predictor_API.git)
 
@@ -39,7 +39,7 @@ While in the root of the cloned repo, build the image with command below:
 ```docker build -t YOUR_IMAGE_NAME:YOUR_IMAGE_TAG .```
 
 
-## Run complete prediction service: User App and Prediction API
+## Run Complete Prediction Service: User App and Prediction API
 
 Given the dependence of this app on a prediction api and the modular approach separating the individual services, it is best to run it as a docker compose.
 
